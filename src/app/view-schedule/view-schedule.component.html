@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h2>View Schedule</h2>
+
+  <mat-table [dataSource]="transits" class="mat-elevation-z8">
+    <ng-container matColumnDef="transitNo">
+      <mat-header-cell *matHeaderCellDef>Transit No.</mat-header-cell>
+      <mat-cell *matCellDef="let transit">{{ transit.transitNo }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="source">
+      <mat-header-cell *matHeaderCellDef>Source</mat-header-cell>
+      <mat-cell *matCellDef="let transit">{{ transit.source }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="destination">
+      <mat-header-cell *matHeaderCellDef>Destination</mat-header-cell>
+      <mat-cell *matCellDef="let transit">{{ transit.destination }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="arrivalTime">
+      <mat-header-cell *matHeaderCellDef>Arrival Time</mat-header-cell>
+      <mat-cell *matCellDef="let transit">{{ transit.arrivalTime }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="departureTime">
+      <mat-header-cell *matHeaderCellDef>Departure Time</mat-header-cell>
+      <mat-cell *matCellDef="let transit">{{ transit.departureTime }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

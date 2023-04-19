@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Add Bus Route</h2>
+  <form (ngSubmit)="onSubmit()" #transitForm="ngForm">
+    <mat-form-field class="form-group">
+      <mat-label>Source</mat-label>
+      <input matInput type="text" id="source" [(ngModel)]="transit.source" name="source" required />
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <mat-label>Destination</mat-label>
+      <input matInput type="text" id="destination" [(ngModel)]="transit.destination" name="destination" required />
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <mat-label>Arrival Time</mat-label>
+      <input matInput type="time" id="arrivalTime" [(ngModel)]="transit.arrivalTime" name="arrivalTime" required />
+    </mat-form-field>
+    <mat-form-field class="form-group">
+      <mat-label>Departure Time</mat-label>
+      <input matInput type="time" id="departureTime" [(ngModel)]="transit.departureTime" name="departureTime" required />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!transitForm.valid">Add Bus Route</button>
+  </form>
+</div>
